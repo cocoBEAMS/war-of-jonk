@@ -1,7 +1,7 @@
 --[[
     UnitDefs.lua
     All unit type definitions for War of Jonk
-    Matches the browser version's UNIT_DEFS exactly
+    Uses text-based icon badges instead of emojis for reliable Roblox rendering
 ]]
 
 local UnitDefs = {}
@@ -9,8 +9,8 @@ local UnitDefs = {}
 UnitDefs.Types = {
     king = {
         name = "King",
-        icon = "crown",       -- Roblox-friendly icon name
-        emoji = "\u{265A}",   -- for UI display
+        iconChar = "K",
+        iconColor = Color3.fromRGB(251, 191, 36),
         theatre = "infantry",
         hp = 100,
         maxHp = 100,
@@ -26,8 +26,8 @@ UnitDefs.Types = {
     },
     guard = {
         name = "Guard Jonk",
-        icon = "shield",
-        emoji = "\u{1F6E1}",
+        iconChar = "G",
+        iconColor = Color3.fromRGB(125, 211, 252),
         theatre = "infantry",
         hp = 80,
         maxHp = 80,
@@ -42,8 +42,8 @@ UnitDefs.Types = {
     },
     spear = {
         name = "Spear Jonk",
-        icon = "sword",
-        emoji = "\u{1F5E1}",
+        iconChar = "S",
+        iconColor = Color3.fromRGB(52, 211, 153),
         theatre = "infantry",
         hp = 60,
         maxHp = 60,
@@ -58,8 +58,8 @@ UnitDefs.Types = {
     },
     marine = {
         name = "Marine Jonk",
-        icon = "gun",
-        emoji = "\u{1F52B}",
+        iconChar = "M",
+        iconColor = Color3.fromRGB(45, 212, 191),
         theatre = "infantry",
         hp = 70,
         maxHp = 70,
@@ -74,8 +74,8 @@ UnitDefs.Types = {
     },
     mole = {
         name = "Mole Jonk",
-        icon = "hole",
-        emoji = "\u{1F573}",
+        iconChar = "O",
+        iconColor = Color3.fromRGB(245, 158, 11),
         theatre = "infantry",
         hp = 50,
         maxHp = 50,
@@ -90,8 +90,8 @@ UnitDefs.Types = {
     },
     commander = {
         name = "Commander Jonk",
-        icon = "star",
-        emoji = "\u{2B50}",
+        iconChar = "C",
+        iconColor = Color3.fromRGB(167, 139, 250),
         theatre = "infantry",
         hp = 65,
         maxHp = 65,
@@ -106,8 +106,8 @@ UnitDefs.Types = {
     },
     lawyer = {
         name = "Lawyer Jonk",
-        icon = "scales",
-        emoji = "\u{2696}",
+        iconChar = "L",
+        iconColor = Color3.fromRGB(148, 163, 184),
         theatre = "infantry",
         hp = 45,
         maxHp = 45,
@@ -122,8 +122,8 @@ UnitDefs.Types = {
     },
     lubatron = {
         name = "Lubatron",
-        icon = "water",
-        emoji = "\u{1F30A}",
+        iconChar = "LB",
+        iconColor = Color3.fromRGB(34, 211, 238),
         theatre = "infantry",
         hp = 55,
         maxHp = 55,
@@ -138,8 +138,8 @@ UnitDefs.Types = {
     },
     railgun = {
         name = "Railgun Jonk",
-        icon = "target",
-        emoji = "\u{1F3AF}",
+        iconChar = "R",
+        iconColor = Color3.fromRGB(248, 113, 113),
         theatre = "infantry",
         hp = 45,
         maxHp = 45,
@@ -149,14 +149,14 @@ UnitDefs.Types = {
         range = 5,
         cost = 45,
         deployable = true,
-        locked = 100, -- games played to unlock
+        locked = "railgun_unlock",
         ability = "Bean Shot",
         abilityDesc = "OP ranged attack at range 5.",
     },
     mole_daddy = {
         name = "Mole Daddy",
-        icon = "microbe",
-        emoji = "\u{1F9A0}",
+        iconChar = "MD",
+        iconColor = Color3.fromRGB(139, 92, 246),
         theatre = "infantry",
         hp = 80,
         maxHp = 80,
@@ -166,14 +166,14 @@ UnitDefs.Types = {
         range = 1,
         cost = 50,
         deployable = true,
-        locked = 500, -- games played to unlock
+        locked = "mole_daddy_unlock",
         ability = "Drill Strike",
         abilityDesc = "Gives all Mole Jonks drills for devastating tunnel attacks.",
     },
     river_rat = {
         name = "River Rat Jonk",
-        icon = "speedboat",
-        emoji = "\u{1F6A4}",
+        iconChar = "RR",
+        iconColor = Color3.fromRGB(59, 130, 246),
         theatre = "naval",
         hp = 40,
         maxHp = 40,
@@ -188,8 +188,8 @@ UnitDefs.Types = {
     },
     transport = {
         name = "Transport Jonk",
-        icon = "ship",
-        emoji = "\u{1F6A2}",
+        iconChar = "T",
+        iconColor = Color3.fromRGB(100, 116, 139),
         theatre = "naval",
         hp = 90,
         maxHp = 90,
@@ -204,8 +204,8 @@ UnitDefs.Types = {
     },
     borei = {
         name = "Borei Jonk",
-        icon = "moon",
-        emoji = "\u{1F311}",
+        iconChar = "B",
+        iconColor = Color3.fromRGB(99, 102, 241),
         theatre = "naval",
         hp = 70,
         maxHp = 70,
@@ -220,8 +220,8 @@ UnitDefs.Types = {
     },
     war_pirate = {
         name = "War Pirate",
-        icon = "skull",
-        emoji = "\u{2620}",
+        iconChar = "P",
+        iconColor = Color3.fromRGB(251, 113, 133),
         theatre = "naval",
         hp = 55,
         maxHp = 55,
@@ -236,8 +236,8 @@ UnitDefs.Types = {
     },
     zumwalt = {
         name = "Zumwalt Jonk",
-        icon = "anchor",
-        emoji = "\u{2693}",
+        iconChar = "Z",
+        iconColor = Color3.fromRGB(29, 78, 216),
         theatre = "naval",
         hp = 120,
         maxHp = 120,
@@ -247,7 +247,7 @@ UnitDefs.Types = {
         range = 5,
         cost = 60,
         deployable = true,
-        locked = "mission", -- special mission unlock
+        locked = "zumwalt_unlock",
         ability = "Full Salvo",
         abilityDesc = "SUPER OP. 3 instant-destroy ground missiles + 3 air missiles.",
     },
