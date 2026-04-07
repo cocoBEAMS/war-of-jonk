@@ -1,0 +1,33 @@
+{
+  "name": "WarOfJonk",
+  "tree": {
+    "$className": "DataModel",
+    "ReplicatedStorage": {
+      "$className": "ReplicatedStorage",
+      "Modules": {
+        "$path": "src/ReplicatedStorage/Modules"
+      }
+    },
+    "ServerScriptService": {
+      "$className": "ServerScriptService",
+      "GameServer": {
+        "$path": "src/ServerScriptService/GameServer.server.lua"
+      }
+    },
+    "StarterGui": {
+      "$className": "StarterGui",
+      "WarOfJonkUI": {
+        "$path": "src/StarterGui/WarOfJonkUI"
+      }
+    },
+    "StarterPlayer": {
+      "$className": "StarterPlayer",
+      "StarterPlayerScripts": {
+        "$className": "StarterPlayerScripts",
+        "GameClient": {
+          "$path": "src/StarterPlayerScripts/GameClient.client.lua"
+        }
+      }
+    }
+  }
+}
